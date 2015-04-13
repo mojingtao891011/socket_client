@@ -14,6 +14,8 @@
 		FB9C87F21AD5528E009D9641 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB9C87F11AD5528E009D9641 /* Images.xcassets */; };
 		FB9C87F51AD5528E009D9641 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB9C87F31AD5528E009D9641 /* LaunchScreen.xib */; };
 		FB9C88011AD5528E009D9641 /* socket_clientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9C88001AD5528E009D9641 /* socket_clientTests.m */; };
+		FB9C880D1AD552A8009D9641 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9C880C1AD552A8009D9641 /* GCDAsyncSocket.m */; };
+		FB9C88111AD55D7F009D9641 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9C88101AD55D7F009D9641 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		FB9C87FA1AD5528E009D9641 /* socket_clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = socket_clientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9C87FF1AD5528E009D9641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB9C88001AD5528E009D9641 /* socket_clientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = socket_clientTests.m; sourceTree = "<group>"; };
+		FB9C880B1AD552A8009D9641 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		FB9C880C1AD552A8009D9641 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		FB9C88101AD55D7F009D9641 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9C88111AD55D7F009D9641 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		FB9C87D81AD5528E009D9641 = {
 			isa = PBXGroup;
 			children = (
+				FB9C88101AD55D7F009D9641 /* CFNetwork.framework */,
 				FB9C87E31AD5528E009D9641 /* socket_client */,
 				FB9C87FD1AD5528E009D9641 /* socket_clientTests */,
 				FB9C87E21AD5528E009D9641 /* Products */,
@@ -81,6 +88,7 @@
 		FB9C87E31AD5528E009D9641 /* socket_client */ = {
 			isa = PBXGroup;
 			children = (
+				FB9C880A1AD55294009D9641 /* TCP */,
 				FB9C87E81AD5528E009D9641 /* AppDelegate.h */,
 				FB9C87E91AD5528E009D9641 /* AppDelegate.m */,
 				FB9C87EB1AD5528E009D9641 /* ViewController.h */,
@@ -117,6 +125,15 @@
 				FB9C87FF1AD5528E009D9641 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB9C880A1AD55294009D9641 /* TCP */ = {
+			isa = PBXGroup;
+			children = (
+				FB9C880B1AD552A8009D9641 /* GCDAsyncSocket.h */,
+				FB9C880C1AD552A8009D9641 /* GCDAsyncSocket.m */,
+			);
+			name = TCP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9C880D1AD552A8009D9641 /* GCDAsyncSocket.m in Sources */,
 				FB9C87ED1AD5528E009D9641 /* ViewController.m in Sources */,
 				FB9C87EA1AD5528E009D9641 /* AppDelegate.m in Sources */,
 				FB9C87E71AD5528E009D9641 /* main.m in Sources */,
@@ -344,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = socket_client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = socket_client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
